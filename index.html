@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Girlfriend Day 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top right, #ffb6c1, #ffe4e1);
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .halaman {
+      display: none;
+    }
+    .aktif {
+    display: block;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 400px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: popIn 1s ease forwards;
+    }
+    #dragPlayer {
+      position: absolute;
+      top: 10px;
+      left: 120px;
+      cursor: move;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    .card h1 {
+      color: #e91e63;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .heart {
+      width: 100px;
+      margin: 20px auto;
+      animation: beat 1s infinite;
+    }
+    
+    .btn {
+      position: absolute;
+      bottom: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #e91e63;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="beranda" class="halaman aktif">
+  <div class="card">
+    <h1>Happy Girlfriend Day 💕</h1>
+    <img src="girl.jpg" alt="Heart" class="heart">
+    <p>
+      Terima kasih sudah menjadi cahaya di hariku. Kamu istimewa dan selalu membuat hidupku lebih indah.
+    </p>
+    <div class="footer">Untukmu, cinta sejatiku 💌</div>
+
+  <button onclick="tampilkan('beranda')">1 </button>
+  <button onclick="tampilkan('profil')">2 </button>
+  </div>
+  </div>
+
+  <!-- Halaman Profil -->
+  <div id="profil" class="halaman">
+    <div class="card">
+    <h1>Happy Girlfriend Day 💕</h1>
+    <img src="gelo.jpg" alt="Heart" class="heart">
+    <p>
+      Senyummu adalah semangatku. Hadirmu adalah bahagiaku.
+    </p>
+    <div class="footer">Untukmu, cinta sejatiku 💌</div>
+
+  <button onclick="tampilkan('beranda')">1 </button>
+  <button onclick="tampilkan('profil')">2 </button>
+  </div>
+  </div>
+  <div id="dragPlayer">
+    <audio controls>
+      <source src="musik.mp3" type="audio/mpeg">
+      Browser kamu tidak mendukung audio.
+    </audio>
+  </div>
+    <script>
+    function tampilkan(idHalaman) {
+      // Sembunyikan semua halaman
+      const semuaHalaman = document.querySelectorAll('.halaman');
+      semuaHalaman.forEach(function(h) {
+        h.classList.remove('aktif');
+      });
+
+      // Tampilkan halaman yang dipilih
+      document.getElementById(idHalaman).classList.add('aktif');
+    }
+  </script>
+</body>
+</html>
